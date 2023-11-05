@@ -1,0 +1,22 @@
+PROCEDURE dot_product(VAR v1 , v2 : ARRAY_OF type[n]) 
+VAR
+    i : INTEGER := 0 ;  // counter
+BEGIN
+    // to get the result of ps is = v1[i]*v2[i]
+    FOR i FROM 0 TO n DO
+        ps = ps + v1[i]*v2[i];
+    END_FOR
+END
+
+ALGORITHM Problem_2
+VAR
+    ps , n : INTEGER := 0 ;  // ps is = v1[i]*v2[i] , n the size of the vectors(v1,v2)
+BEGIN
+    //size of the vectors
+    read(n)
+    IF (dot_product(v1[n] , v2[n]) = 0) THEN
+        write("V1 and V2 are Orthogonal")
+    ELSE
+        write("V1 and v2 are NOT Orthogonal")
+    END_IF
+END

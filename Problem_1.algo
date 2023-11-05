@@ -1,0 +1,33 @@
+ALGORITHM sum_distinct_elements
+VAR
+    set1 : ARRAY_OF INTEGER[n];
+    set2 : ARRAY_OF INTEGER[m];
+    i,j, sum :  INTEGER := 0 ; // counters for the loop
+    n,m : INTEGER; // number of sizes for the sets
+
+BEGIN
+
+    // read the size of the 2 sets of arrays
+    read(n);
+    read(m);
+
+    // comparing the 2 Sets and make the equal elements to 0
+    FOR i FROM 0 TO n-1 DO
+        FOR j FROM 0 TO m-1 DO
+            IF (set1[i] == set2[j]) THEN
+                RETURN set1[i],set2[j] := "0";
+            END_IF
+        END_FOR
+    END_FOR
+
+    // sum the rest of the elements in 2 Sets into the sum variable
+    FOR i FROM 0 TO n-1 DO
+        sum := sum + set1[i]
+    END_FOR
+    for j FROM 0 TO m-1 DO
+        sum := sum + set2[j]
+    END_FOR
+
+    // the sum is the result
+    read(sum)
+END
